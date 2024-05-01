@@ -1,0 +1,1618 @@
+Train size: 550735
+Validation size: 236030
+Test size: 1393845
+Baseline model I20/R20
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.8924 train_accuracy: 0.5061; valid_loss: 0.6990  valid_accuracy: 0.5251
+Validation loss decreased (inf --> 0.699048).  Saving model ...
+[2/10000] train_loss: 0.7949 train_accuracy: 0.5118; valid_loss: 0.7004  valid_accuracy: 0.5239
+EarlyStopping counter(based on validation): 1 out of 2
+[3/10000] train_loss: 0.7522 train_accuracy: 0.5170; valid_loss: 0.6891  valid_accuracy: 0.5366
+Validation loss decreased (0.699048 --> 0.689091).  Saving model ...
+[4/10000] train_loss: 0.7296 train_accuracy: 0.5214; valid_loss: 0.6881  valid_accuracy: 0.5399
+Validation loss decreased (0.689091 --> 0.688142).  Saving model ...
+[5/10000] train_loss: 0.7151 train_accuracy: 0.5259; valid_loss: 0.6904  valid_accuracy: 0.5377
+EarlyStopping counter(based on validation): 1 out of 2
+[6/10000] train_loss: 0.7074 train_accuracy: 0.5292; valid_loss: 0.6877  valid_accuracy: 0.5416
+Validation loss decreased (0.688142 --> 0.687702).  Saving model ...
+[7/10000] train_loss: 0.7019 train_accuracy: 0.5339; valid_loss: 0.6883  valid_accuracy: 0.5410
+EarlyStopping counter(based on validation): 1 out of 2
+[8/10000] train_loss: 0.6980 train_accuracy: 0.5376; valid_loss: 0.6884  valid_accuracy: 0.5414
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 16m 13s
+test_loss: 0.6949
+Test complete in 2m 32s
+Extension: Sensitivity to Model Structure, I20/R20
+Extension: Filters(32)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 32, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(32, 64, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=61440, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 32, 64, 60]             512
+       BatchNorm2d-2           [-1, 32, 64, 60]              64
+         LeakyReLU-3           [-1, 32, 64, 60]               0
+         MaxPool2d-4           [-1, 32, 32, 60]               0
+            Conv2d-5           [-1, 64, 32, 60]          30,784
+       BatchNorm2d-6           [-1, 64, 32, 60]             128
+         LeakyReLU-7           [-1, 64, 32, 60]               0
+         MaxPool2d-8           [-1, 64, 16, 60]               0
+            Conv2d-9          [-1, 128, 16, 60]         123,008
+      BatchNorm2d-10          [-1, 128, 16, 60]             256
+        LeakyReLU-11          [-1, 128, 16, 60]               0
+        MaxPool2d-12           [-1, 128, 8, 60]               0
+          Dropout-13           [-1, 128, 8, 60]               0
+           Linear-14                    [-1, 2]         122,882
+================================================================
+Total params: 277,634
+Trainable params: 277,634
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 10.31
+Params size (MB): 1.06
+Estimated Total Size (MB): 11.39
+----------------------------------------------------------------
+[1/10000] train_loss: 0.8973 train_accuracy: 0.5058; valid_loss: 0.6978  valid_accuracy: 0.5248
+Validation loss decreased (inf --> 0.697826).  Saving model ...
+[2/10000] train_loss: 0.7907 train_accuracy: 0.5107; valid_loss: 0.6913  valid_accuracy: 0.5295
+Validation loss decreased (0.697826 --> 0.691338).  Saving model ...
+[3/10000] train_loss: 0.7509 train_accuracy: 0.5132; valid_loss: 0.6899  valid_accuracy: 0.5340
+Validation loss decreased (0.691338 --> 0.689909).  Saving model ...
+[4/10000] train_loss: 0.7270 train_accuracy: 0.5175; valid_loss: 0.6900  valid_accuracy: 0.5325
+EarlyStopping counter(based on validation): 1 out of 2
+[5/10000] train_loss: 0.7137 train_accuracy: 0.5208; valid_loss: 0.6880  valid_accuracy: 0.5392
+Validation loss decreased (0.689909 --> 0.688046).  Saving model ...
+[6/10000] train_loss: 0.7051 train_accuracy: 0.5256; valid_loss: 0.6869  valid_accuracy: 0.5430
+Validation loss decreased (0.688046 --> 0.686919).  Saving model ...
+[7/10000] train_loss: 0.7001 train_accuracy: 0.5292; valid_loss: 0.6881  valid_accuracy: 0.5399
+EarlyStopping counter(based on validation): 1 out of 2
+[8/10000] train_loss: 0.6966 train_accuracy: 0.5322; valid_loss: 0.6862  valid_accuracy: 0.5454
+Validation loss decreased (0.686919 --> 0.686153).  Saving model ...
+[9/10000] train_loss: 0.6939 train_accuracy: 0.5361; valid_loss: 0.6880  valid_accuracy: 0.5401
+EarlyStopping counter(based on validation): 1 out of 2
+[10/10000] train_loss: 0.6920 train_accuracy: 0.5384; valid_loss: 0.6895  valid_accuracy: 0.5345
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 11m 5s
+test_loss: 0.6915
+Test complete in 1m 52s
+Extension: Filters(128)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 128, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(256, 512, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=245760, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1          [-1, 128, 64, 60]           2,048
+       BatchNorm2d-2          [-1, 128, 64, 60]             256
+         LeakyReLU-3          [-1, 128, 64, 60]               0
+         MaxPool2d-4          [-1, 128, 32, 60]               0
+            Conv2d-5          [-1, 256, 32, 60]         491,776
+       BatchNorm2d-6          [-1, 256, 32, 60]             512
+         LeakyReLU-7          [-1, 256, 32, 60]               0
+         MaxPool2d-8          [-1, 256, 16, 60]               0
+            Conv2d-9          [-1, 512, 16, 60]       1,966,592
+      BatchNorm2d-10          [-1, 512, 16, 60]           1,024
+        LeakyReLU-11          [-1, 512, 16, 60]               0
+        MaxPool2d-12           [-1, 512, 8, 60]               0
+          Dropout-13           [-1, 512, 8, 60]               0
+           Linear-14                    [-1, 2]         491,522
+================================================================
+Total params: 2,953,730
+Trainable params: 2,953,730
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 41.25
+Params size (MB): 11.27
+Estimated Total Size (MB): 52.53
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9054 train_accuracy: 0.5073; valid_loss: 0.7206  valid_accuracy: 0.5205
+Validation loss decreased (inf --> 0.720621).  Saving model ...
+[2/10000] train_loss: 0.8059 train_accuracy: 0.5144; valid_loss: 0.6952  valid_accuracy: 0.5287
+Validation loss decreased (0.720621 --> 0.695172).  Saving model ...
+[3/10000] train_loss: 0.7646 train_accuracy: 0.5174; valid_loss: 0.6917  valid_accuracy: 0.5330
+Validation loss decreased (0.695172 --> 0.691722).  Saving model ...
+[4/10000] train_loss: 0.7362 train_accuracy: 0.5234; valid_loss: 0.6881  valid_accuracy: 0.5393
+Validation loss decreased (0.691722 --> 0.688141).  Saving model ...
+[5/10000] train_loss: 0.7220 train_accuracy: 0.5293; valid_loss: 0.6943  valid_accuracy: 0.5335
+EarlyStopping counter(based on validation): 1 out of 2
+[6/10000] train_loss: 0.7126 train_accuracy: 0.5336; valid_loss: 0.7320  valid_accuracy: 0.5032
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 27m 1s
+test_loss: 0.6927
+Test complete in 4m 24s
+Extension: Layers(2)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+           Dropout-9          [-1, 128, 16, 60]               0
+           Linear-10                    [-1, 2]         245,762
+================================================================
+Total params: 370,178
+Trainable params: 370,178
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 14.06
+Params size (MB): 1.41
+Estimated Total Size (MB): 15.49
+----------------------------------------------------------------
+[1/10000] train_loss: 0.8739 train_accuracy: 0.5070; valid_loss: 0.6974  valid_accuracy: 0.5249
+Validation loss decreased (inf --> 0.697412).  Saving model ...
+[2/10000] train_loss: 0.7739 train_accuracy: 0.5134; valid_loss: 0.6905  valid_accuracy: 0.5338
+Validation loss decreased (0.697412 --> 0.690467).  Saving model ...
+[3/10000] train_loss: 0.7457 train_accuracy: 0.5165; valid_loss: 0.6884  valid_accuracy: 0.5398
+Validation loss decreased (0.690467 --> 0.688387).  Saving model ...
+[4/10000] train_loss: 0.7256 train_accuracy: 0.5223; valid_loss: 0.6875  valid_accuracy: 0.5410
+Validation loss decreased (0.688387 --> 0.687489).  Saving model ...
+[5/10000] train_loss: 0.7142 train_accuracy: 0.5259; valid_loss: 0.6867  valid_accuracy: 0.5446
+Validation loss decreased (0.687489 --> 0.686687).  Saving model ...
+[6/10000] train_loss: 0.7073 train_accuracy: 0.5294; valid_loss: 0.6886  valid_accuracy: 0.5385
+EarlyStopping counter(based on validation): 1 out of 2
+[7/10000] train_loss: 0.7017 train_accuracy: 0.5334; valid_loss: 0.6892  valid_accuracy: 0.5389
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 9m 15s
+test_loss: 0.6936
+Test complete in 2m 2s
+Extension: Layers(4)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv4): Conv2d(256, 512, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn4): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act4): LeakyReLU(negative_slope=0.01)
+    (pool4): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+           Conv2d-13           [-1, 512, 8, 60]       1,966,592
+      BatchNorm2d-14           [-1, 512, 8, 60]           1,024
+        LeakyReLU-15           [-1, 512, 8, 60]               0
+        MaxPool2d-16           [-1, 512, 4, 60]               0
+          Dropout-17           [-1, 512, 4, 60]               0
+           Linear-18                    [-1, 2]         245,762
+================================================================
+Total params: 2,830,082
+Trainable params: 2,830,082
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 27.19
+Params size (MB): 10.80
+Estimated Total Size (MB): 38.00
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9368 train_accuracy: 0.5065; valid_loss: 0.6988  valid_accuracy: 0.5269
+Validation loss decreased (inf --> 0.698821).  Saving model ...
+[2/10000] train_loss: 0.8112 train_accuracy: 0.5123; valid_loss: 0.6974  valid_accuracy: 0.5267
+Validation loss decreased (0.698821 --> 0.697391).  Saving model ...
+[3/10000] train_loss: 0.7665 train_accuracy: 0.5143; valid_loss: 0.6926  valid_accuracy: 0.5337
+Validation loss decreased (0.697391 --> 0.692598).  Saving model ...
+[4/10000] train_loss: 0.7371 train_accuracy: 0.5173; valid_loss: 0.6896  valid_accuracy: 0.5364
+Validation loss decreased (0.692598 --> 0.689630).  Saving model ...
+[5/10000] train_loss: 0.7161 train_accuracy: 0.5225; valid_loss: 0.6997  valid_accuracy: 0.5221
+EarlyStopping counter(based on validation): 1 out of 2
+[6/10000] train_loss: 0.7054 train_accuracy: 0.5281; valid_loss: 0.7219  valid_accuracy: 0.5021
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 18m 24s
+test_loss: 0.6936
+Test complete in 3m 18s
+Extension: Dropout(0.0)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.0, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.7248 train_accuracy: 0.5165; valid_loss: 0.7234  valid_accuracy: 0.5148
+Validation loss decreased (inf --> 0.723450).  Saving model ...
+[2/10000] train_loss: 0.6998 train_accuracy: 0.5343; valid_loss: 0.6996  valid_accuracy: 0.5301
+Validation loss decreased (0.723450 --> 0.699610).  Saving model ...
+[3/10000] train_loss: 0.6921 train_accuracy: 0.5472; valid_loss: 0.7253  valid_accuracy: 0.5173
+EarlyStopping counter(based on validation): 1 out of 2
+[4/10000] train_loss: 0.6872 train_accuracy: 0.5563; valid_loss: 0.7015  valid_accuracy: 0.5331
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 7m 57s
+test_loss: 0.7119
+Test complete in 2m 27s
+Extension: Dropout(0.25)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.25, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.8045 train_accuracy: 0.5081; valid_loss: 0.6961  valid_accuracy: 0.5276
+Validation loss decreased (inf --> 0.696113).  Saving model ...
+[2/10000] train_loss: 0.7521 train_accuracy: 0.5172; valid_loss: 0.6987  valid_accuracy: 0.5276
+EarlyStopping counter(based on validation): 1 out of 2
+[3/10000] train_loss: 0.7344 train_accuracy: 0.5220; valid_loss: 0.6909  valid_accuracy: 0.5360
+Validation loss decreased (0.696113 --> 0.690867).  Saving model ...
+[4/10000] train_loss: 0.7220 train_accuracy: 0.5287; valid_loss: 0.6929  valid_accuracy: 0.5300
+EarlyStopping counter(based on validation): 1 out of 2
+[5/10000] train_loss: 0.7132 train_accuracy: 0.5340; valid_loss: 0.6981  valid_accuracy: 0.5307
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 10m 1s
+test_loss: 0.6954
+Test complete in 2m 34s
+Extension: Dropout(0.75)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.75, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 1.1115 train_accuracy: 0.5031; valid_loss: 0.7213  valid_accuracy: 0.5084
+Validation loss decreased (inf --> 0.721283).  Saving model ...
+[2/10000] train_loss: 0.8631 train_accuracy: 0.5091; valid_loss: 0.6915  valid_accuracy: 0.5315
+Validation loss decreased (0.721283 --> 0.691534).  Saving model ...
+[3/10000] train_loss: 0.7709 train_accuracy: 0.5113; valid_loss: 0.6917  valid_accuracy: 0.5286
+EarlyStopping counter(based on validation): 1 out of 2
+[4/10000] train_loss: 0.7343 train_accuracy: 0.5152; valid_loss: 0.6893  valid_accuracy: 0.5346
+Validation loss decreased (0.691534 --> 0.689312).  Saving model ...
+[5/10000] train_loss: 0.7186 train_accuracy: 0.5183; valid_loss: 0.6889  valid_accuracy: 0.5363
+Validation loss decreased (0.689312 --> 0.688923).  Saving model ...
+[6/10000] train_loss: 0.7099 train_accuracy: 0.5216; valid_loss: 0.6876  valid_accuracy: 0.5403
+Validation loss decreased (0.688923 --> 0.687559).  Saving model ...
+[7/10000] train_loss: 0.7050 train_accuracy: 0.5241; valid_loss: 0.6865  valid_accuracy: 0.5439
+Validation loss decreased (0.687559 --> 0.686466).  Saving model ...
+[8/10000] train_loss: 0.7023 train_accuracy: 0.5261; valid_loss: 0.6864  valid_accuracy: 0.5444
+Validation loss decreased (0.686466 --> 0.686385).  Saving model ...
+[9/10000] train_loss: 0.6994 train_accuracy: 0.5305; valid_loss: 0.6851  valid_accuracy: 0.5486
+Validation loss decreased (0.686385 --> 0.685136).  Saving model ...
+[10/10000] train_loss: 0.6973 train_accuracy: 0.5323; valid_loss: 0.6862  valid_accuracy: 0.5451
+EarlyStopping counter(based on validation): 1 out of 2
+[11/10000] train_loss: 0.6964 train_accuracy: 0.5349; valid_loss: 0.6961  valid_accuracy: 0.5255
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 22m 3s
+test_loss: 0.6908
+Test complete in 2m 36s
+Extension: BN(no)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+         LeakyReLU-2           [-1, 64, 64, 60]               0
+         MaxPool2d-3           [-1, 64, 32, 60]               0
+            Conv2d-4          [-1, 128, 32, 60]         123,008
+         LeakyReLU-5          [-1, 128, 32, 60]               0
+         MaxPool2d-6          [-1, 128, 16, 60]               0
+            Conv2d-7          [-1, 256, 16, 60]         491,776
+         LeakyReLU-8          [-1, 256, 16, 60]               0
+         MaxPool2d-9           [-1, 256, 8, 60]               0
+          Dropout-10           [-1, 256, 8, 60]               0
+           Linear-11                    [-1, 2]         245,762
+================================================================
+Total params: 861,570
+Trainable params: 861,570
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 15.00
+Params size (MB): 3.29
+Estimated Total Size (MB): 18.30
+----------------------------------------------------------------
+[1/10000] train_loss: 0.8914 train_accuracy: 0.5113; valid_loss: 0.6903  valid_accuracy: 0.5297
+Validation loss decreased (inf --> 0.690343).  Saving model ...
+[2/10000] train_loss: 0.6915 train_accuracy: 0.5290; valid_loss: 0.6887  valid_accuracy: 0.5353
+Validation loss decreased (0.690343 --> 0.688652).  Saving model ...
+[3/10000] train_loss: 0.6879 train_accuracy: 0.5411; valid_loss: 0.6874  valid_accuracy: 0.5417
+Validation loss decreased (0.688652 --> 0.687360).  Saving model ...
+[4/10000] train_loss: 0.6851 train_accuracy: 0.5502; valid_loss: 0.6864  valid_accuracy: 0.5438
+Validation loss decreased (0.687360 --> 0.686422).  Saving model ...
+[5/10000] train_loss: 0.6822 train_accuracy: 0.5578; valid_loss: 0.6864  valid_accuracy: 0.5448
+EarlyStopping counter(based on validation): 1 out of 2
+[6/10000] train_loss: 0.6798 train_accuracy: 0.5640; valid_loss: 0.6870  valid_accuracy: 0.5434
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 10m 20s
+test_loss: 0.6926
+Test complete in 2m 22s
+Extension: Xavier(no)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.7374 train_accuracy: 0.5121; valid_loss: 0.6989  valid_accuracy: 0.5185
+Validation loss decreased (inf --> 0.698945).  Saving model ...
+[2/10000] train_loss: 0.7120 train_accuracy: 0.5235; valid_loss: 0.6917  valid_accuracy: 0.5313
+Validation loss decreased (0.698945 --> 0.691692).  Saving model ...
+[3/10000] train_loss: 0.7040 train_accuracy: 0.5296; valid_loss: 0.7025  valid_accuracy: 0.5183
+EarlyStopping counter(based on validation): 1 out of 2
+[4/10000] train_loss: 0.6988 train_accuracy: 0.5353; valid_loss: 0.6901  valid_accuracy: 0.5365
+Validation loss decreased (0.691692 --> 0.690130).  Saving model ...
+[5/10000] train_loss: 0.6947 train_accuracy: 0.5411; valid_loss: 0.6860  valid_accuracy: 0.5458
+Validation loss decreased (0.690130 --> 0.685998).  Saving model ...
+[6/10000] train_loss: 0.6925 train_accuracy: 0.5458; valid_loss: 0.6860  valid_accuracy: 0.5474
+EarlyStopping counter(based on validation): 1 out of 2
+[7/10000] train_loss: 0.6909 train_accuracy: 0.5482; valid_loss: 0.6925  valid_accuracy: 0.5375
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 14m 3s
+test_loss: 0.6916
+Test complete in 2m 31s
+Extension: Activation(ReLU)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): ReLU()
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): ReLU()
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): ReLU()
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+              ReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+              ReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+             ReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9004 train_accuracy: 0.5059; valid_loss: 0.6945  valid_accuracy: 0.5278
+Validation loss decreased (inf --> 0.694474).  Saving model ...
+[2/10000] train_loss: 0.7971 train_accuracy: 0.5117; valid_loss: 0.6922  valid_accuracy: 0.5324
+Validation loss decreased (0.694474 --> 0.692185).  Saving model ...
+[3/10000] train_loss: 0.7532 train_accuracy: 0.5190; valid_loss: 0.6890  valid_accuracy: 0.5392
+Validation loss decreased (0.692185 --> 0.688950).  Saving model ...
+[4/10000] train_loss: 0.7305 train_accuracy: 0.5214; valid_loss: 0.6921  valid_accuracy: 0.5321
+EarlyStopping counter(based on validation): 1 out of 2
+[5/10000] train_loss: 0.7169 train_accuracy: 0.5245; valid_loss: 0.6949  valid_accuracy: 0.5262
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 10m 1s
+test_loss: 0.6941
+Test complete in 2m 30s
+Extension: Max-pool Size(2, 2)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=14336, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 30]               0
+            Conv2d-5          [-1, 128, 32, 30]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 30]             256
+         LeakyReLU-7          [-1, 128, 32, 30]               0
+         MaxPool2d-8          [-1, 128, 16, 15]               0
+            Conv2d-9          [-1, 256, 16, 15]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 15]             512
+        LeakyReLU-11          [-1, 256, 16, 15]               0
+        MaxPool2d-12            [-1, 256, 8, 7]               0
+          Dropout-13            [-1, 256, 8, 7]               0
+           Linear-14                    [-1, 2]          28,674
+================================================================
+Total params: 645,378
+Trainable params: 645,378
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 10.77
+Params size (MB): 2.46
+Estimated Total Size (MB): 13.24
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9181 train_accuracy: 0.5045; valid_loss: 0.6932  valid_accuracy: 0.5233
+Validation loss decreased (inf --> 0.693234).  Saving model ...
+[2/10000] train_loss: 0.7905 train_accuracy: 0.5076; valid_loss: 0.6909  valid_accuracy: 0.5294
+Validation loss decreased (0.693234 --> 0.690916).  Saving model ...
+[3/10000] train_loss: 0.7487 train_accuracy: 0.5093; valid_loss: 0.6943  valid_accuracy: 0.5184
+EarlyStopping counter(based on validation): 1 out of 2
+[4/10000] train_loss: 0.7256 train_accuracy: 0.5131; valid_loss: 0.6938  valid_accuracy: 0.5213
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 4m 29s
+test_loss: 0.6919
+Test complete in 1m 56s
+Extension: FilterSize(3, 3)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(3, 3), stride=(3, 1), padding=(65, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]             640
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]          73,856
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         295,168
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 616,322
+Trainable params: 616,322
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 2.35
+Estimated Total Size (MB): 22.99
+----------------------------------------------------------------
+[1/10000] train_loss: 0.8974 train_accuracy: 0.5074; valid_loss: 0.7130  valid_accuracy: 0.5194
+Validation loss decreased (inf --> 0.713031).  Saving model ...
+[2/10000] train_loss: 0.7942 train_accuracy: 0.5115; valid_loss: 0.6923  valid_accuracy: 0.5323
+Validation loss decreased (0.713031 --> 0.692296).  Saving model ...
+[3/10000] train_loss: 0.7526 train_accuracy: 0.5177; valid_loss: 0.6939  valid_accuracy: 0.5302
+EarlyStopping counter(based on validation): 1 out of 2
+[4/10000] train_loss: 0.7293 train_accuracy: 0.5229; valid_loss: 0.6889  valid_accuracy: 0.5388
+Validation loss decreased (0.692296 --> 0.688906).  Saving model ...
+[5/10000] train_loss: 0.7163 train_accuracy: 0.5262; valid_loss: 0.6977  valid_accuracy: 0.5255
+EarlyStopping counter(based on validation): 1 out of 2
+[6/10000] train_loss: 0.7079 train_accuracy: 0.5306; valid_loss: 0.6898  valid_accuracy: 0.5384
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 10m 57s
+test_loss: 0.6952
+Test complete in 2m 19s
+Extension: FilterSize(7, 3)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(7, 3), stride=(3, 1), padding=(69, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(7, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(7, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,408
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         172,160
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         688,384
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 1,108,610
+Trainable params: 1,108,610
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 4.23
+Estimated Total Size (MB): 24.87
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9055 train_accuracy: 0.5062; valid_loss: 0.7026  valid_accuracy: 0.5227
+Validation loss decreased (inf --> 0.702607).  Saving model ...
+[2/10000] train_loss: 0.7963 train_accuracy: 0.5116; valid_loss: 0.6918  valid_accuracy: 0.5345
+Validation loss decreased (0.702607 --> 0.691781).  Saving model ...
+[3/10000] train_loss: 0.7534 train_accuracy: 0.5156; valid_loss: 0.6959  valid_accuracy: 0.5269
+EarlyStopping counter(based on validation): 1 out of 2
+[4/10000] train_loss: 0.7288 train_accuracy: 0.5212; valid_loss: 0.6879  valid_accuracy: 0.5405
+Validation loss decreased (0.691781 --> 0.687861).  Saving model ...
+[5/10000] train_loss: 0.7157 train_accuracy: 0.5242; valid_loss: 0.6878  valid_accuracy: 0.5401
+EarlyStopping counter(based on validation): 1 out of 2
+[6/10000] train_loss: 0.7069 train_accuracy: 0.5288; valid_loss: 0.6872  valid_accuracy: 0.5417
+Validation loss decreased (0.687861 --> 0.687225).  Saving model ...
+[7/10000] train_loss: 0.7017 train_accuracy: 0.5333; valid_loss: 0.6960  valid_accuracy: 0.5237
+EarlyStopping counter(based on validation): 1 out of 2
+[8/10000] train_loss: 0.6981 train_accuracy: 0.5375; valid_loss: 0.6912  valid_accuracy: 0.5371
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 18m 2s
+test_loss: 0.6925
+Test complete in 2m 39s
+Extension: Stride/Dilation: (1,1)/(2,1)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(1, 1), padding=(4, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9223 train_accuracy: 0.5078; valid_loss: 0.6967  valid_accuracy: 0.5289
+Validation loss decreased (inf --> 0.696674).  Saving model ...
+[2/10000] train_loss: 0.7889 train_accuracy: 0.5123; valid_loss: 0.6937  valid_accuracy: 0.5291
+Validation loss decreased (0.696674 --> 0.693745).  Saving model ...
+[3/10000] train_loss: 0.7451 train_accuracy: 0.5156; valid_loss: 0.6892  valid_accuracy: 0.5364
+Validation loss decreased (0.693745 --> 0.689215).  Saving model ...
+[4/10000] train_loss: 0.7261 train_accuracy: 0.5191; valid_loss: 0.6888  valid_accuracy: 0.5362
+Validation loss decreased (0.689215 --> 0.688790).  Saving model ...
+[5/10000] train_loss: 0.7159 train_accuracy: 0.5222; valid_loss: 0.6920  valid_accuracy: 0.5288
+EarlyStopping counter(based on validation): 1 out of 2
+[6/10000] train_loss: 0.7093 train_accuracy: 0.5259; valid_loss: 0.6869  valid_accuracy: 0.5425
+Validation loss decreased (0.688790 --> 0.686880).  Saving model ...
+[7/10000] train_loss: 0.7040 train_accuracy: 0.5299; valid_loss: 0.7038  valid_accuracy: 0.5127
+EarlyStopping counter(based on validation): 1 out of 2
+[8/10000] train_loss: 0.7005 train_accuracy: 0.5341; valid_loss: 0.6886  valid_accuracy: 0.5375
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 16m 1s
+test_loss: 0.6918
+Test complete in 2m 32s
+Extension: Stride/Dilation: (3,1)/(1,1)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(65, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.8964 train_accuracy: 0.5064; valid_loss: 0.7005  valid_accuracy: 0.5245
+Validation loss decreased (inf --> 0.700531).  Saving model ...
+[2/10000] train_loss: 0.7948 train_accuracy: 0.5112; valid_loss: 0.6983  valid_accuracy: 0.5229
+Validation loss decreased (0.700531 --> 0.698322).  Saving model ...
+[3/10000] train_loss: 0.7537 train_accuracy: 0.5171; valid_loss: 0.7085  valid_accuracy: 0.5164
+EarlyStopping counter(based on validation): 1 out of 2
+[4/10000] train_loss: 0.7304 train_accuracy: 0.5213; valid_loss: 0.6970  valid_accuracy: 0.5240
+Validation loss decreased (0.698322 --> 0.696989).  Saving model ...
+[5/10000] train_loss: 0.7171 train_accuracy: 0.5256; valid_loss: 0.6938  valid_accuracy: 0.5295
+Validation loss decreased (0.696989 --> 0.693806).  Saving model ...
+[6/10000] train_loss: 0.7087 train_accuracy: 0.5284; valid_loss: 0.6876  valid_accuracy: 0.5420
+Validation loss decreased (0.693806 --> 0.687556).  Saving model ...
+[7/10000] train_loss: 0.7028 train_accuracy: 0.5329; valid_loss: 0.6990  valid_accuracy: 0.5247
+EarlyStopping counter(based on validation): 1 out of 2
+[8/10000] train_loss: 0.6996 train_accuracy: 0.5357; valid_loss: 0.6877  valid_accuracy: 0.5427
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 15m 58s
+test_loss: 0.6923
+Test complete in 2m 32s
+Extension: Stride/Dilation: (1,1)/(1,1)
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(1, 1), padding=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9241 train_accuracy: 0.5091; valid_loss: 0.7023  valid_accuracy: 0.5257
+Validation loss decreased (inf --> 0.702342).  Saving model ...
+[2/10000] train_loss: 0.7876 train_accuracy: 0.5140; valid_loss: 0.6938  valid_accuracy: 0.5285
+Validation loss decreased (0.702342 --> 0.693778).  Saving model ...
+[3/10000] train_loss: 0.7441 train_accuracy: 0.5155; valid_loss: 0.6912  valid_accuracy: 0.5347
+Validation loss decreased (0.693778 --> 0.691152).  Saving model ...
+[4/10000] train_loss: 0.7262 train_accuracy: 0.5189; valid_loss: 0.6894  valid_accuracy: 0.5359
+Validation loss decreased (0.691152 --> 0.689395).  Saving model ...
+[5/10000] train_loss: 0.7164 train_accuracy: 0.5225; valid_loss: 0.7102  valid_accuracy: 0.5110
+EarlyStopping counter(based on validation): 1 out of 2
+[6/10000] train_loss: 0.7101 train_accuracy: 0.5254; valid_loss: 0.6882  valid_accuracy: 0.5389
+Validation loss decreased (0.689395 --> 0.688202).  Saving model ...
+[7/10000] train_loss: 0.7061 train_accuracy: 0.5287; valid_loss: 0.6867  valid_accuracy: 0.5453
+Validation loss decreased (0.688202 --> 0.686677).  Saving model ...
+[8/10000] train_loss: 0.7017 train_accuracy: 0.5321; valid_loss: 0.7013  valid_accuracy: 0.5229
+EarlyStopping counter(based on validation): 1 out of 2
+[9/10000] train_loss: 0.6985 train_accuracy: 0.5370; valid_loss: 0.6913  valid_accuracy: 0.5338
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 17m 58s
+test_loss: 0.6922
+Test complete in 2m 32s
+Extension: Dilation: case1
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(1, 1), padding=(4, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same, dilation=(2, 1))
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same, dilation=(2, 1))
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9477 train_accuracy: 0.5070; valid_loss: 0.7023  valid_accuracy: 0.5266
+Validation loss decreased (inf --> 0.702313).  Saving model ...
+[2/10000] train_loss: 0.8137 train_accuracy: 0.5131; valid_loss: 0.6961  valid_accuracy: 0.5303
+Validation loss decreased (0.702313 --> 0.696126).  Saving model ...
+[3/10000] train_loss: 0.7586 train_accuracy: 0.5152; valid_loss: 0.6945  valid_accuracy: 0.5275
+Validation loss decreased (0.696126 --> 0.694519).  Saving model ...
+[4/10000] train_loss: 0.7318 train_accuracy: 0.5184; valid_loss: 0.6938  valid_accuracy: 0.5272
+Validation loss decreased (0.694519 --> 0.693814).  Saving model ...
+[5/10000] train_loss: 0.7182 train_accuracy: 0.5229; valid_loss: 0.6885  valid_accuracy: 0.5390
+Validation loss decreased (0.693814 --> 0.688549).  Saving model ...
+[6/10000] train_loss: 0.7105 train_accuracy: 0.5258; valid_loss: 0.6894  valid_accuracy: 0.5374
+EarlyStopping counter(based on validation): 1 out of 2
+[7/10000] train_loss: 0.7054 train_accuracy: 0.5285; valid_loss: 0.6874  valid_accuracy: 0.5422
+Validation loss decreased (0.688549 --> 0.687430).  Saving model ...
+[8/10000] train_loss: 0.7014 train_accuracy: 0.5335; valid_loss: 0.6910  valid_accuracy: 0.5357
+EarlyStopping counter(based on validation): 1 out of 2
+[9/10000] train_loss: 0.6979 train_accuracy: 0.5372; valid_loss: 0.7006  valid_accuracy: 0.5172
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 18m 6s
+test_loss: 0.6945
+Test complete in 2m 31s
+Extension: Dilation: case2
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(1, 1), padding=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same, dilation=(2, 1))
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same, dilation=(3, 1))
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9602 train_accuracy: 0.5073; valid_loss: 0.7041  valid_accuracy: 0.5291
+Validation loss decreased (inf --> 0.704102).  Saving model ...
+[2/10000] train_loss: 0.8229 train_accuracy: 0.5134; valid_loss: 0.6936  valid_accuracy: 0.5334
+Validation loss decreased (0.704102 --> 0.693585).  Saving model ...
+[3/10000] train_loss: 0.7598 train_accuracy: 0.5171; valid_loss: 0.6896  valid_accuracy: 0.5354
+Validation loss decreased (0.693585 --> 0.689630).  Saving model ...
+[4/10000] train_loss: 0.7314 train_accuracy: 0.5196; valid_loss: 0.6995  valid_accuracy: 0.5205
+EarlyStopping counter(based on validation): 1 out of 2
+[5/10000] train_loss: 0.7176 train_accuracy: 0.5221; valid_loss: 0.6896  valid_accuracy: 0.5369
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 10m 3s
+test_loss: 0.6935
+Test complete in 2m 34s
+Extension: Dilation: case3
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(1, 1), padding=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same, dilation=(2, 2))
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same, dilation=(3, 3))
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9738 train_accuracy: 0.5068; valid_loss: 0.7114  valid_accuracy: 0.5225
+Validation loss decreased (inf --> 0.711362).  Saving model ...
+[2/10000] train_loss: 0.8418 train_accuracy: 0.5140; valid_loss: 0.7415  valid_accuracy: 0.5124
+EarlyStopping counter(based on validation): 1 out of 2
+[3/10000] train_loss: 0.7743 train_accuracy: 0.5186; valid_loss: 0.6957  valid_accuracy: 0.5283
+Validation loss decreased (0.711362 --> 0.695658).  Saving model ...
+[4/10000] train_loss: 0.7396 train_accuracy: 0.5204; valid_loss: 0.6938  valid_accuracy: 0.5311
+Validation loss decreased (0.695658 --> 0.693795).  Saving model ...
+[5/10000] train_loss: 0.7215 train_accuracy: 0.5245; valid_loss: 0.6950  valid_accuracy: 0.5292
+EarlyStopping counter(based on validation): 1 out of 2
+[6/10000] train_loss: 0.7115 train_accuracy: 0.5277; valid_loss: 0.6904  valid_accuracy: 0.5336
+Validation loss decreased (0.693795 --> 0.690359).  Saving model ...
+[7/10000] train_loss: 0.7051 train_accuracy: 0.5313; valid_loss: 0.6955  valid_accuracy: 0.5228
+EarlyStopping counter(based on validation): 1 out of 2
+[8/10000] train_loss: 0.7011 train_accuracy: 0.5348; valid_loss: 0.6909  valid_accuracy: 0.5352
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 16m 5s
+test_loss: 0.6928
+Test complete in 2m 36s
+Extension: Dilation: case4
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(1, 1), padding=(4, 2), dilation=(2, 2))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same, dilation=(2, 2))
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same, dilation=(2, 2))
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9463 train_accuracy: 0.5065; valid_loss: 0.7321  valid_accuracy: 0.5104
+Validation loss decreased (inf --> 0.732083).  Saving model ...
+[2/10000] train_loss: 0.8091 train_accuracy: 0.5126; valid_loss: 0.6995  valid_accuracy: 0.5257
+Validation loss decreased (0.732083 --> 0.699458).  Saving model ...
+[3/10000] train_loss: 0.7521 train_accuracy: 0.5152; valid_loss: 0.6894  valid_accuracy: 0.5362
+Validation loss decreased (0.699458 --> 0.689354).  Saving model ...
+[4/10000] train_loss: 0.7279 train_accuracy: 0.5193; valid_loss: 0.7040  valid_accuracy: 0.5178
+EarlyStopping counter(based on validation): 1 out of 2
+[5/10000] train_loss: 0.7166 train_accuracy: 0.5222; valid_loss: 0.6887  valid_accuracy: 0.5403
+Validation loss decreased (0.689354 --> 0.688653).  Saving model ...
+[6/10000] train_loss: 0.7092 train_accuracy: 0.5270; valid_loss: 0.6911  valid_accuracy: 0.5329
+EarlyStopping counter(based on validation): 1 out of 2
+[7/10000] train_loss: 0.7048 train_accuracy: 0.5297; valid_loss: 0.6880  valid_accuracy: 0.5378
+Validation loss decreased (0.688653 --> 0.687979).  Saving model ...
+[8/10000] train_loss: 0.7011 train_accuracy: 0.5326; valid_loss: 0.6924  valid_accuracy: 0.5321
+EarlyStopping counter(based on validation): 1 out of 2
+[9/10000] train_loss: 0.6978 train_accuracy: 0.5364; valid_loss: 0.6899  valid_accuracy: 0.5384
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 18m 3s
+test_loss: 0.6930
+Test complete in 2m 37s
+Extension: Dilation: case5
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(1, 1), padding=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9328 train_accuracy: 0.5078; valid_loss: 0.7039  valid_accuracy: 0.5290
+Validation loss decreased (inf --> 0.703898).  Saving model ...
+[2/10000] train_loss: 0.8006 train_accuracy: 0.5130; valid_loss: 0.7087  valid_accuracy: 0.5193
+EarlyStopping counter(based on validation): 1 out of 2
+[3/10000] train_loss: 0.7492 train_accuracy: 0.5161; valid_loss: 0.6909  valid_accuracy: 0.5344
+Validation loss decreased (0.703898 --> 0.690892).  Saving model ...
+[4/10000] train_loss: 0.7284 train_accuracy: 0.5193; valid_loss: 0.6889  valid_accuracy: 0.5370
+Validation loss decreased (0.690892 --> 0.688929).  Saving model ...
+[5/10000] train_loss: 0.7171 train_accuracy: 0.5219; valid_loss: 0.6877  valid_accuracy: 0.5421
+Validation loss decreased (0.688929 --> 0.687662).  Saving model ...
+[6/10000] train_loss: 0.7102 train_accuracy: 0.5261; valid_loss: 0.6875  valid_accuracy: 0.5430
+Validation loss decreased (0.687662 --> 0.687513).  Saving model ...
+[7/10000] train_loss: 0.7049 train_accuracy: 0.5304; valid_loss: 0.6870  valid_accuracy: 0.5441
+Validation loss decreased (0.687513 --> 0.687013).  Saving model ...
+[8/10000] train_loss: 0.7012 train_accuracy: 0.5339; valid_loss: 0.6872  valid_accuracy: 0.5423
+EarlyStopping counter(based on validation): 1 out of 2
+[9/10000] train_loss: 0.6983 train_accuracy: 0.5375; valid_loss: 0.6851  valid_accuracy: 0.5480
+Validation loss decreased (0.687013 --> 0.685069).  Saving model ...
+[10/10000] train_loss: 0.6960 train_accuracy: 0.5401; valid_loss: 0.6878  valid_accuracy: 0.5437
+EarlyStopping counter(based on validation): 1 out of 2
+[11/10000] train_loss: 0.6939 train_accuracy: 0.5435; valid_loss: 0.6866  valid_accuracy: 0.5447
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 22m 2s
+test_loss: 0.6929
+Test complete in 2m 32s
+Extension: Predict the return trend of different subsequent y-days
+Extension: I20/R5
+Train size: 553553
+Validation size: 237238
+Test size: 1399933
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.8993 train_accuracy: 0.5099; valid_loss: 0.6989  valid_accuracy: 0.5316
+Validation loss decreased (inf --> 0.698882).  Saving model ...
+[2/10000] train_loss: 0.7908 train_accuracy: 0.5182; valid_loss: 0.6883  valid_accuracy: 0.5439
+Validation loss decreased (0.698882 --> 0.688251).  Saving model ...
+[3/10000] train_loss: 0.7469 train_accuracy: 0.5255; valid_loss: 0.6841  valid_accuracy: 0.5506
+Validation loss decreased (0.688251 --> 0.684055).  Saving model ...
+[4/10000] train_loss: 0.7220 train_accuracy: 0.5310; valid_loss: 0.6809  valid_accuracy: 0.5599
+Validation loss decreased (0.684055 --> 0.680875).  Saving model ...
+[5/10000] train_loss: 0.7073 train_accuracy: 0.5407; valid_loss: 0.6847  valid_accuracy: 0.5544
+EarlyStopping counter(based on validation): 1 out of 2
+[6/10000] train_loss: 0.6986 train_accuracy: 0.5485; valid_loss: 0.6832  valid_accuracy: 0.5577
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 11m 55s
+test_loss: 0.6938
+Test complete in 2m 33s
+Extension: I20/R60
+Train size: 542498
+Validation size: 232500
+Test size: 1376215
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=2, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 2]         245,762
+================================================================
+Total params: 862,466
+Trainable params: 862,466
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 3.29
+Estimated Total Size (MB): 23.93
+----------------------------------------------------------------
+[1/10000] train_loss: 0.9034 train_accuracy: 0.5061; valid_loss: 0.7028  valid_accuracy: 0.5187
+Validation loss decreased (inf --> 0.702764).  Saving model ...
+[2/10000] train_loss: 0.7969 train_accuracy: 0.5119; valid_loss: 0.6914  valid_accuracy: 0.5312
+Validation loss decreased (0.702764 --> 0.691434).  Saving model ...
+[3/10000] train_loss: 0.7549 train_accuracy: 0.5158; valid_loss: 0.6901  valid_accuracy: 0.5359
+Validation loss decreased (0.691434 --> 0.690133).  Saving model ...
+[4/10000] train_loss: 0.7309 train_accuracy: 0.5192; valid_loss: 0.6944  valid_accuracy: 0.5308
+EarlyStopping counter(based on validation): 1 out of 2
+[5/10000] train_loss: 0.7163 train_accuracy: 0.5243; valid_loss: 0.6885  valid_accuracy: 0.5388
+Validation loss decreased (0.690133 --> 0.688484).  Saving model ...
+[6/10000] train_loss: 0.7094 train_accuracy: 0.5258; valid_loss: 0.6885  valid_accuracy: 0.5380
+EarlyStopping counter(based on validation): 1 out of 2
+[7/10000] train_loss: 0.7032 train_accuracy: 0.5303; valid_loss: 0.6936  valid_accuracy: 0.5237
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 13m 50s
+test_loss: 0.6904
+Test complete in 2m 29s
+Extension: Predict the detailed return values, I20/R20
+Train size: 550735
+Validation size: 236030
+Test size: 1393845
+ConvNet(
+  (features): Sequential(
+    (conv1): Conv2d(1, 64, kernel_size=(5, 3), stride=(3, 1), padding=(67, 1), dilation=(2, 1))
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act1): LeakyReLU(negative_slope=0.01)
+    (pool1): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv2): Conv2d(64, 128, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act2): LeakyReLU(negative_slope=0.01)
+    (pool2): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+    (conv3): Conv2d(128, 256, kernel_size=(5, 3), stride=(1, 1), padding=same)
+    (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (act3): LeakyReLU(negative_slope=0.01)
+    (pool3): MaxPool2d(kernel_size=(2, 1), stride=(2, 1), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc): Linear(in_features=122880, out_features=1, bias=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 64, 60]           1,024
+       BatchNorm2d-2           [-1, 64, 64, 60]             128
+         LeakyReLU-3           [-1, 64, 64, 60]               0
+         MaxPool2d-4           [-1, 64, 32, 60]               0
+            Conv2d-5          [-1, 128, 32, 60]         123,008
+       BatchNorm2d-6          [-1, 128, 32, 60]             256
+         LeakyReLU-7          [-1, 128, 32, 60]               0
+         MaxPool2d-8          [-1, 128, 16, 60]               0
+            Conv2d-9          [-1, 256, 16, 60]         491,776
+      BatchNorm2d-10          [-1, 256, 16, 60]             512
+        LeakyReLU-11          [-1, 256, 16, 60]               0
+        MaxPool2d-12           [-1, 256, 8, 60]               0
+          Dropout-13           [-1, 256, 8, 60]               0
+           Linear-14                    [-1, 1]         122,881
+================================================================
+Total params: 739,585
+Trainable params: 739,585
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 20.63
+Params size (MB): 2.82
+Estimated Total Size (MB): 23.46
+----------------------------------------------------------------
+[1/10000] train_loss: 0.8645 train_accuracy: 0.0006; valid_loss: 0.0644  valid_accuracy: 0.0006
+Validation loss decreased (inf --> 0.064356).  Saving model ...
+[2/10000] train_loss: 0.3264 train_accuracy: 0.0006; valid_loss: 0.0479  valid_accuracy: 0.0006
+Validation loss decreased (0.064356 --> 0.047884).  Saving model ...
+[3/10000] train_loss: 0.1443 train_accuracy: 0.0006; valid_loss: 0.0412  valid_accuracy: 0.0006
+Validation loss decreased (0.047884 --> 0.041241).  Saving model ...
+[4/10000] train_loss: 0.0802 train_accuracy: 0.0006; valid_loss: 0.0405  valid_accuracy: 0.0006
+Validation loss decreased (0.041241 --> 0.040525).  Saving model ...
+[5/10000] train_loss: 0.0581 train_accuracy: 0.0006; valid_loss: 0.0412  valid_accuracy: 0.0006
+EarlyStopping counter(based on validation): 1 out of 2
+[6/10000] train_loss: 0.0492 train_accuracy: 0.0006; valid_loss: 0.0389  valid_accuracy: 0.0006
+Validation loss decreased (0.040525 --> 0.038921).  Saving model ...
+[7/10000] train_loss: 0.0449 train_accuracy: 0.0006; valid_loss: 0.0399  valid_accuracy: 0.0006
+EarlyStopping counter(based on validation): 1 out of 2
+[8/10000] train_loss: 0.0427 train_accuracy: 0.0006; valid_loss: 0.0398  valid_accuracy: 0.0006
+EarlyStopping counter(based on validation): 2 out of 2
+Early stopping
+Training complete in 16m 8s

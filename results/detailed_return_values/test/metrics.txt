@@ -1,0 +1,6 @@
+MAE: 0.0978
+MAPE: 30.3077
+R_squared: -0.0186
+pearson_corr: 0.0324
+spearman_corr: 0.0010
+sharpe_ratio: 0.5666

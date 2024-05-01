@@ -1,0 +1,13 @@
+accuracy: 0.5242
+precision: 0.5388
+recall: 0.6169
+f1: 0.5753
+roc_auc: 0.5014
+confusion_matrix:
+[[281669 384319]
+ [278808 449049]]
+
+balanced_accuracy: 0.5199
+pearson_corr: 0.0406
+spearman_corr: 0.2172
+sharpe_ratio: 1.2194
